@@ -9,9 +9,12 @@ import Profile from "./pages/Profile";
 import Tasks from "./pages/Tasks.jsx";
 import Users from "./pages/Users.jsx";
 import profileImg from "./assets/profileImg.png";
+import Dashboard from "./pages/dashboard.jsx";
+import { useState } from "react";
 // import Admin from './pages/Admin'
 
 function App() {
+  const [auth, setAuth]=useState(false)
   return (
     <>
       <div className="page">
@@ -22,31 +25,32 @@ function App() {
                 <div className="logo">
                   <Link to="/home">Ikomol</Link>
                 </div>
-                <div className="links">
+               {auth&& <div className="links">
                   <li>
-                    <NavLink to="/tasks">Task</NavLink>
+                    <NavLink to="/dashboard/tasks">Task</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/inventory">Inventory</NavLink>
+                    <NavLink to="/dashboard/inventory">Inventory</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/chat">Chat</NavLink>
+                    <NavLink to="/dashboard/chat">Chat</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/users">Users</NavLink>
+                    <NavLink to="/dashboard/users">Users</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/profile">Profile</NavLink>
+                    <NavLink to="/dashboard/profile">Profile</NavLink>
                   </li>
-                </div>
+                </div>}
                 <div className="btns">
-                  <Link>
+                  <Link to={auth?"/logout":"/login"}>
                     <img
                       src={profileImg}
                       alt="profile icon"
                       width="32px"
                       height="32px"
                     />
+                   { auth?"Logout":"Login"}
                   </Link>
                 </div>
               </ul>
@@ -56,13 +60,17 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
 
-            <Route path="/users" element={<Users />} />
-            <Route path="/Tasks" element={<Tasks />} />
-            <Route path="/inventory" element={<Inventory />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/login" element={<Login />} />
+
+            {auth && <>
+            
+            <Route path="/dashboard/users" element={<Users />} />
+            <Route path="/dashboard/Tasks" element={<Tasks />} />
+            <Route path="/dashboard/inventory" element={<Inventory />} />
+            <Route path="/dashboard/chat" element={<Chat />} />
+            <Route path="/dashboard/profile" element={<Profile />} />
+            </>}
+            <Route path="/login" element={<Login setAuth={setAuth} />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
           </Routes>
           </div>
             

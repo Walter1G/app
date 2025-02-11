@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Login = () => {
+
+const Login = ({setAuth}) => {
+
+  
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -10,11 +14,15 @@ const Login = () => {
 
   function handleLogin(e) {
     e.preventDefault();
+    setLoading(true)
     if (username === "Admin1" && password === "Altumfall") {
-      alert("login successful");
-      navigate("/home");
+      setLoading(false);
+      // alert("login successful");
+      setAuth(true);
+      navigate("/dashboard/tasks");
     } else {
       setError("Invalid username or password");
+      setLoading(false)
     }
   }
   return (
@@ -47,8 +55,8 @@ const Login = () => {
               />
             </div>
             <div className="form-row">
-              <button type="submit" className="btn btn-primary">
-                Log In
+              <button type="submit" className={`btn btn-primary ${loading?"disabled":""}`} disabled={loading}  >
+                {loading?"Loading ...":"Log In"}
               </button>
             </div>
             <p>
