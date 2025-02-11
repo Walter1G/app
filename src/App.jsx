@@ -9,7 +9,7 @@ import Profile from "./pages/Profile";
 import Tasks from "./pages/Tasks.jsx";
 import Users from "./pages/Users.jsx";
 import profileImg from "./assets/profileImg.png";
-import Dashboard from "./pages/dashboard.jsx";
+// import Dashboard from "./pages/dashboard.jsx";
 import { useState } from "react";
 // import Admin from './pages/Admin'
 
