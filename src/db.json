@@ -1,0 +1,109 @@
+{"tasks":[
+{
+    "id": 1,  
+    "type": "Maintenance",  
+    "description": "Replace faulty network switch",  
+    "createdAt": "2025-02-10T09:00:00Z",  
+    "createdBy": "network_admin",  
+    "TobeattendedAt": "2025-02-12T10:00:00Z",  
+    "status": "booked",  
+    "AssignedTo": null,  
+    "CompletedAt": null,  
+    "comment": "Replacement switch ordered, expected delivery by 2025-02-11."
+},
+{
+    "id": 2,  
+    "type": "Support",  
+    "description": "Troubleshoot office Wi-Fi issues",  
+    "createdAt": "2025-02-09T14:30:00Z",  
+    "createdBy": "helpdesk",  
+    "TobeattendedAt": "2025-02-11T08:00:00Z",  
+    "status": "assigned",  
+    "AssignedTo": "John Doe",  
+    "CompletedAt": null,  
+    "comment": "Issue seems to be related to DHCP server misconfiguration."
+},
+{
+    "id": 3,  
+    "type": "Installation",  
+    "description": "Deploy new firewall for branch office",  
+    "createdAt": "2025-02-08T11:15:00Z",  
+    "createdBy": "network_engineer",  
+    "TobeattendedAt": "2025-02-10T15:00:00Z",  
+    "status": "pending",  
+    "AssignedTo": "Jane Smith",  
+    "CompletedAt": null,  
+    "comment": "Waiting for site approval before installation begins."
+},
+{
+    "id": 4,  
+    "type": "SiteSurvey",  
+    "description": "Assess network coverage in new building",  
+    "createdAt": "2025-02-07T07:45:00Z",  
+    "createdBy": "admin",  
+    "TobeattendedAt": "2025-02-09T09:30:00Z",  
+    "status": "completed",  
+    "AssignedTo": "Michael Lee",  
+    "CompletedAt": "2025-02-09T12:00:00Z",  
+    "comment": "Signal strength is weak in the basement area. Recommend adding repeaters."
+},
+{
+    "id": 5,  
+    "type": "Maintenance",  
+    "description": "Upgrade router firmware",  
+    "createdAt": "2025-02-06T16:00:00Z",  
+    "createdBy": "IT Support",  
+    "TobeattendedAt": "2025-02-08T14:00:00Z",  
+    "status": "failed",  
+    "AssignedTo": "Alex Johnson",  
+    "CompletedAt": null,  
+    "comment": "Firmware update failed due to compatibility issues. Need vendor support."
+}
+],
+"users": [
+  {
+    "id": 1,
+    "name": "John Doe",
+    "role": "Technician",
+    "email": "john.doe@example.com",
+    "password": "hashed_password",
+    "createdAt": "2025-01-15T08:30:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Admin User",
+    "role": "Admin",
+    "email": "admin@example.com",
+    "password": "hashed_password",
+    "createdAt": "2025-01-10T10:00:00Z"
+  }
+],
+"chats": [
+  {
+    "id": 1,
+    "fromUser": 1,
+    "toUser": 2,
+    "message": "Hey, I need an update on the switch replacement.",
+    "sentAt": "2025-02-10T11:00:00Z"
+  },
+  {
+    "id": 2,
+    "fromUser": 2,
+    "toUser": 1,
+    "message": "The replacement switch is arriving tomorrow.",
+    "sentAt": "2025-02-10T11:05:00Z"
+  }
+],
+"faqs": [
+  {
+    "id": 1,
+    "question": "How to reset a network switch?",
+    "answer": "Press and hold the reset button for 10 seconds until the device reboots."
+  },
+  {
+    "id": 2,
+    "question": "What is the default IP for a Cisco router?",
+    "answer": "The default IP address is usually 192.168.1.1."
+  }
+]
+}
