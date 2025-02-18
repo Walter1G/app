@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
-const Login = ({setAuth}) => {
+const Login = ({setAuth, setUser}) => {
 
   
 
@@ -18,6 +18,7 @@ const Login = ({setAuth}) => {
     if (username === "Admin1" && password === "Altumfall") {
       setLoading(false);
       // alert("login successful");
+      setUser("Super Admin")
       setAuth(true);
       navigate("/dashboard/tasks");
     } else {

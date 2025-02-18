@@ -14,7 +14,8 @@ import { useState } from "react";
 // import Admin from './pages/Admin'
 
 function App() {
-  const [auth, setAuth]=useState(false)
+  const [auth, setAuth] = useState(false)
+  const [user, setUser] = useState(null)
   return (
     <>
       <div className="page">
@@ -24,7 +25,7 @@ function App() {
               <ul>
                 <div className="logo">
                   <Link to="/home">Ikomol</Link>
-                </div>
+                  {user && <p>Welcome { user}</p>}                </div>
                {auth&& <div className="links">
                   <li>
                     <NavLink to="/dashboard/tasks">Task</NavLink>
@@ -42,7 +43,11 @@ function App() {
                     <NavLink to="/dashboard/profile">Profile</NavLink>
                   </li>
                 </div>}
-                <div className="btns">
+                <div className="btns" onClick={auth ? () => {
+                  setAuth((auth) => !auth)
+                  setUser(null)
+                  // localStorage.removeItem('token')
+                }:""}>
                   <Link to={auth?"/logout":"/login"}>
                     <img
                       src={profileImg}
@@ -69,7 +74,7 @@ function App() {
             <Route path="/dashboard/chat" element={<Chat />} />
             <Route path="/dashboard/profile" element={<Profile />} />
             </>}
-            <Route path="/login" element={<Login setAuth={setAuth} />} />
+            <Route path="/login" element={<Login setAuth={setAuth} setUser={setUser} />} />
             <Route path="/register" element={<Register />} />
           </Routes>
           </div>

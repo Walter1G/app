@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in;
+  scroll-behavior: smooth;
+  font-family: "Playfair", serif;
+}
 .page {
   max-width: 1200px;
   min-width: 100vh;
@@ -59,79 +68,146 @@ nav ul .links {
   text-decoration: underline;
 }
 
-nav .btns {
+nav .btns a {
   display: flex;
-  gap: 0.4rem;
+
+  align-items: center;
 }
 
-.card{
-  box-shadow: 5px 5px 10px 4px rgba(0,0,0,.2);
+.card {
+  box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
 }
 
-.form-container{
+.form-container {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 70vh;
   padding: 2rem;
 }
-.login-form .form{
+.login-form .form {
   background-color: rgba(255, 190, 116, 0.788);
   height: 50vh;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
 }
 
-.form-content h2{
+.form-content h2 {
   font-size: 24px;
   text-align: center;
   text-decoration: underline;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
-.form-row{
+.form-row {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1rem;
-  gap: .5rem;
+  gap: 0.5rem;
   font-size: 1.2rem;
   align-items: center;
 }
 
-.form-row input{
-  padding: .5rem;
+.form-row input {
+  padding: 0.5rem;
   font-size: 1.2rem;
   border: transparent;
   border-radius: 13px;
 }
 
-.form-row input:active{
+.form-row input:active {
   outline: orangered;
   /* border:1px solid orange; */
 }
 
-.form-row button{
-  padding: .5rem;
+.form-row button {
+  padding: 0.5rem;
   width: 50%;
   font-weight: 600;
   font-size: 1rem;
   border-radius: 13px;
   cursor: pointer;
-
 }
 
-form a{
+form a {
   text-decoration: none;
   color: black;
   font-weight: 800;
 }
 
-.error{
+.error {
   color: red;
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.disabled{
+.disabled {
   pointer-events: none;
+}
+
+.tasks nav.flex {
+  display: flex;
+  gap: 2rem;
+  /* background-color: red; */
+  border-bottom: 1px solid rgb(197, 196, 196);
+}
+
+.tasks nav.flex button {
+  background-color: rgb(248, 189, 155);
+  padding: 0.5rem;
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.4;
+  cursor: pointer;
+}
+.tasks nav.flex button:hover {
+  transform: scaleY(1.2);
+  background-color: rgb(255, 153, 94);
+}
+
+.addtaskform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid gray;
+}
+
+.addtaskform form button{
+  border: 1px solid #f0f0f0;
+  background-color: rgba(55, 0, 255, 0.692);
+  padding:4px ;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  margin-bottom: 4px;
+
+}
+.addtaskform h2{
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.addtaskform form .group {
+  display: flex;
+  gap: 2rem;
+}
+.group input {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-size: 1.4;
+  line-height: 1.4;
+  padding: 4px;
+}
+
+.group textarea{
+  margin-bottom: 10px;
+}
+
+.task-table-container{
+  margin-top: 20px;
+}
+
+.task-table th{
+  text-decoration: underline;
+  align-items: center;
 }
